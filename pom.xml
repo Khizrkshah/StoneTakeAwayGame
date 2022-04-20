@@ -6,7 +6,7 @@
     <groupId>inf.unideb.hu</groupId>
     <artifactId>homework-project-Khizrkshah</artifactId>
     <version>1.0</version>
-    <description><!-- TODO: a short description of your project --></description>
+    <description>A two player game of stone takeaway, the player who makes the last move wins</description>
     <developers>
         <developer>
             <id>khizrkshah</id>
