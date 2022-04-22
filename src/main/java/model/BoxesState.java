@@ -25,5 +25,11 @@ public class BoxesState {
         }
 
     }
+    public boolean isGoalState(){
+        if (boxes.contains(1)){
+            return false;
+        }
+        return true;
+    }
 
 }
