@@ -7,9 +7,9 @@ import lombok.Data;
 @Data
 public class PlayerState {
 
-    String playerOneName;
-    String playerTwoName;
-    Boolean isPlayerOnesTurn;
+   private String playerOneName;
+   private String playerTwoName;
+   private Boolean isPlayerOnesTurn;
 
     public PlayerState(){
         isPlayerOnesTurn = true;
