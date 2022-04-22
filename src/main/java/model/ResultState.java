@@ -1,6 +1,9 @@
 package model;
 import lombok.Data;
 
+/**
+ * Class representing the Result state of the game.
+ */
 @Data
 public class ResultState {
    private String playerOne;
