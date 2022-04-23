@@ -13,12 +13,9 @@ public class Controller {
      * Method for handling stone removal from boxes.
      * @param playerSelectedBox value player passes to represent the box to remove the stone from
      */
-    public void PlayerMove(PlayerState playerState,BoxesState boxesState, Integer playerSelectedBox, ResultState resultState){
-        //playerState.setAvailableTurns(2);
-        //player selected box
-        //first selected box
-        //second selected box
-        //playerState.setPlayerDone(false);
+    public void playerMove(PlayerState playerState, BoxesState boxesState, Integer playerSelectedBox, ResultState resultState){
+        boolean validMove = false;
+
         if(playerSelectedBox >= 0 && playerSelectedBox <= 14 && boxesState.boxes.get(playerSelectedBox) != 0)
         {
           if(playerState.getAvailableTurns() == 2 && playerState.isPlayerDone() == false)
@@ -30,7 +27,8 @@ public class Controller {
               int tempavailable = playerState.getAvailableTurns();
               tempavailable--;
               playerState.setAvailableTurns(tempavailable);
-              printInstuctions(playerState.getIsPlayerOnesTurn(), boxesState);
+              validMove = true;
+              //printInstuctions(playerState.getIsPlayerOnesTurn(), boxesState);
           }
           else if( playerState.getAvailableTurns() == 1 && playerState.isPlayerDone() == false){
             if(playerSelectedBox > playerState.getFirstBoxSelection() + 1 || playerSelectedBox < playerState.getFirstBoxSelection() - 1) {
@@ -46,9 +44,12 @@ public class Controller {
                 int tempavailable = playerState.getAvailableTurns();
                 tempavailable--;
                 playerState.setAvailableTurns(tempavailable);
+                validMove = true;
              //player done = true player change function
                 //playerState.setPlayerDone(false);
-                changePlayer(playerState,resultState,boxesState);
+                if (isGoalState(boxesState,resultState,playerState) == false) {
+                    changePlayer(playerState, resultState, boxesState);
+                }
             }
            }
         }else{
@@ -56,9 +57,13 @@ public class Controller {
             Logger.error("Box selected does not exist or is already empty");
             System.out.println("The box you have chosen does not exist or is already empty!");
          }
+        if (isGoalState(boxesState,resultState,playerState) == false && validMove) {
+            printInstructions(playerState.getIsPlayerOnesTurn(), boxesState);
+        }
+
     }
 
-    public void printInstuctions(boolean isPlayerOnesTurn, BoxesState boxesState){
+    public void printInstructions(boolean isPlayerOnesTurn, BoxesState boxesState){
 
         System.out.println(boxesState.boxes);
 
@@ -80,13 +85,16 @@ public class Controller {
 
         if (command.matches("[0-9]+")) {
             Logger.info("Input was number: {}", command);
-            PlayerMove(playerState, boxesState, Integer.parseInt(command), resultState);
+            playerMove(playerState, boxesState, Integer.parseInt(command), resultState);
             //throw error if command is less than 0
 
         }else if (command.contains("Done"))/* check functionality of to lower */{
             //change player
             Logger.info("Input was done: {}", command);
             changePlayer(playerState,resultState,boxesState);
+            if (isGoalState(boxesState,resultState,playerState) == false) {
+                printInstructions(playerState.getIsPlayerOnesTurn(), boxesState);
+            }
         }
     }
 
@@ -98,7 +106,7 @@ public class Controller {
         }
         resetPlayerStates(playerState);
         resultState.setNumberOfMoves(resultState.getNumberOfMoves() + 1);
-        printInstuctions(playerState.getIsPlayerOnesTurn(),boxesState);
+        //printInstuctions(playerState.getIsPlayerOnesTurn(),boxesState);
     }
 
 

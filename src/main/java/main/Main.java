@@ -7,8 +7,6 @@ import java.util.*;
 import controllers.Controller;
 import model.ResultState;
 
-import javax.xml.transform.Result;
-
 public class Main {
 
 
@@ -32,17 +30,18 @@ public class Main {
         System.out.println(playerState.getPlayerTwoName());
         */
 
+        ResultState resultState = new ResultState();
         BoxesState boxesState = new BoxesState();
         PlayerState playerState = new PlayerState();
-        ResultState resultState = new ResultState();
         Controller controller = new Controller();
         Scanner sc = new Scanner(System.in);
+
         boxesState.initializeBoxes();
-        controller.printInstuctions(playerState.getIsPlayerOnesTurn(),boxesState);
         System.out.println("Enter Player One Name:");
         playerState.setPlayerOneName(sc.nextLine());
         System.out.println("Enter Player Two Name: ");
         playerState.setPlayerTwoName(sc.nextLine());
+        controller.printInstructions(playerState.getIsPlayerOnesTurn(),boxesState);
         while(controller.isGoalState(boxesState,resultState,playerState) == false) {
             controller.waitForCommands(playerState, boxesState, resultState);
         }

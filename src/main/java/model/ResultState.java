@@ -8,8 +8,6 @@ import java.util.Date;
  */
 @Data
 public class ResultState {
-   private String playerOne;
-   private String playerTwo;
    private Integer numberOfMoves = 0;
    private String winner;
 
