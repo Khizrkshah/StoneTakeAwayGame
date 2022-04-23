@@ -12,5 +12,5 @@ public class ResultState {
    private String playerTwo;
    private Integer numberOfMoves;
    private String winner;
-   private Date startDateAndTime;
+
 }

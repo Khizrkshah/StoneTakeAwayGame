@@ -1,7 +1,9 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Random;
+import java.time.LocalDateTime;
 
 /**
  * Class representing the state of the boxes.
@@ -9,6 +11,7 @@ import java.util.Random;
 public class BoxesState {
 
     public ArrayList<Integer> boxes = new ArrayList<>(15);
+    public LocalDateTime startDateAndTime;
 
     /**
      * Initializes the ArrayList of boxes.
@@ -23,6 +26,7 @@ public class BoxesState {
                 boxes.add(1);
             }
         }
+        startDateAndTime = LocalDateTime.now();
 
     }
 

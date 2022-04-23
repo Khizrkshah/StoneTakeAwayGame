@@ -12,7 +12,7 @@ public class PlayerState {
    private Boolean isPlayerOnesTurn;
    private int availableTurns;
    private int firstBoxSelection;
-   private int secondBoxselection;
+   private int secondBoxSelection;
 
     public PlayerState(){
         isPlayerOnesTurn = true;
