@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.Random;
 import java.time.LocalDateTime;
 
+
 /**
  * Class representing the state of the boxes.
  */
@@ -30,15 +31,5 @@ public class BoxesState {
 
     }
 
-    /**
-     * Determines wether the game has reached the goal state
-     * @return true or false depending on wether the game has reached the goal state
-     */
-    public boolean isGoalState(){
-        if (boxes.contains(1)){
-            return false;
-        }
-        return true;
-    }
 
 }

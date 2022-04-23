@@ -4,50 +4,21 @@ package main;
 import model.BoxesState;
 import model.PlayerState;
 import java.util.*;
+import controllers.Controller;
+import model.ResultState;
+
+import javax.xml.transform.Result;
 
 public class Main {
 
-    public void PlayerMove(Integer playerSelectedBox){
-        /*
-        available turns = 2;
-        player selected box
-        first selected box
-        second selected box
-        playerDone = false;
-        if(player selected box >= 0 && player selected box <= 14)
-        {
-          if(available turns = 2 && playerDone = false)
-          {
-          first selected box = player selected box
-          available turns--
-          }
-          else if(available turns = 1 && playerDone = false)
-          {
-            if(player selected box > first selected box + 1 or player selected box < first selected box - 1)
-            {
-            error needs to be adjacent
-            }
-            else
-            {
-             second selected box = player selected box
-             available turns--
-             player done = true
-            }
-           }
-        }
-        else
-        {
-           error box doesnt exist
-         }
-        */
-
-    }
 
     /**
      * Main function.
      * @param args
      */
     public static void main(String[] args) {
+
+        /*
         Scanner playerNames = new Scanner(System.in);
         BoxesState boxesState = new BoxesState();
         PlayerState playerState = new PlayerState();
@@ -59,11 +30,23 @@ public class Main {
         System.out.println(boxesState.boxes);
         System.out.println(playerState.getPlayerOneName());
         System.out.println(playerState.getPlayerTwoName());
-        while(boxesState.isGoalState()){
-            if (playerState.getIsPlayerOnesTurn() == true){
-                System.out.println("Player Ones turn!");
-            }
-        }
+        */
 
+        BoxesState boxesState = new BoxesState();
+        PlayerState playerState = new PlayerState();
+        ResultState resultState = new ResultState();
+        Controller controller = new Controller();
+        Scanner sc = new Scanner(System.in);
+        boxesState.initializeBoxes();
+        controller.printInstuctions(playerState.getIsPlayerOnesTurn(),boxesState);
+        System.out.println("Enter Player One Name:");
+        playerState.setPlayerOneName(sc.nextLine());
+        System.out.println("Enter Player Two Name: ");
+        playerState.setPlayerTwoName(sc.nextLine());
+        while(controller.isGoalState(boxesState,resultState,playerState) == false) {
+            controller.waitForCommands(playerState, boxesState, resultState);
+        }
+        System.out.println("Game is over!");
+        System.out.println(resultState.getWinner());
     }
 }

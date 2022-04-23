@@ -10,7 +10,7 @@ import java.util.Date;
 public class ResultState {
    private String playerOne;
    private String playerTwo;
-   private Integer numberOfMoves;
+   private Integer numberOfMoves = 0;
    private String winner;
 
 }

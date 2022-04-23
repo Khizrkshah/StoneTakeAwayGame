@@ -13,9 +13,12 @@ public class PlayerState {
    private int availableTurns;
    private int firstBoxSelection;
    private int secondBoxSelection;
+   private boolean playerDone;
 
     public PlayerState(){
         isPlayerOnesTurn = true;
+        playerDone = false;
+        availableTurns = 2;
     }
 
 }
