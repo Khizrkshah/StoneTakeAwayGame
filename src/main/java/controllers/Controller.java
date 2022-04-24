@@ -128,7 +128,7 @@ public class Controller {
         if (playerState.getIsPlayerOnesTurn() == true){
             winnerName = playerState.getPlayerOneName();
         }else{
-            winnerName =playerState.getPlayerTwoName();
+            winnerName = playerState.getPlayerTwoName();
         }
         resultState.setWinner(winnerName);
         return true;

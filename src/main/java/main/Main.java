@@ -6,6 +6,8 @@ import model.PlayerState;
 import java.util.*;
 import controllers.Controller;
 import model.ResultState;
+import util.GameData;
+import util.JsonHelper;
 
 public class Main {
 
@@ -15,20 +17,6 @@ public class Main {
      * @param args
      */
     public static void main(String[] args) {
-
-        /*
-        Scanner playerNames = new Scanner(System.in);
-        BoxesState boxesState = new BoxesState();
-        PlayerState playerState = new PlayerState();
-        System.out.println("Enter player one name: ");
-        playerState.setPlayerOneName(playerNames.nextLine());
-        System.out.println("Enter player two name: ");
-        playerState.setPlayerTwoName(playerNames.nextLine());
-        boxesState.initializeBoxes();
-        System.out.println(boxesState.boxes);
-        System.out.println(playerState.getPlayerOneName());
-        System.out.println(playerState.getPlayerTwoName());
-        */
 
         ResultState resultState = new ResultState();
         BoxesState boxesState = new BoxesState();
@@ -46,6 +34,12 @@ public class Main {
             controller.waitForCommands(playerState, boxesState, resultState);
         }
         System.out.println("Game is over!");
+        System.out.println(resultState.getNumberOfMoves());
         System.out.println(resultState.getWinner());
+
+        GameData gameData = new GameData(boxesState.startDateAndTime,playerState.getPlayerOneName(),playerState.getPlayerTwoName(), resultState.getWinner(), resultState.getNumberOfMoves());
+        JsonHelper.write(gameData);
+
+
     }
 }
