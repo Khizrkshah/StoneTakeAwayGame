@@ -88,7 +88,7 @@ public class Controller {
             playerMove(playerState, boxesState, Integer.parseInt(command), resultState);
             //throw error if command is less than 0
 
-        }else if (command.contains("Done"))/* check functionality of to lower */{
+        }else if (command.contains("Done") && playerState.getAvailableTurns() != 2)/* check functionality of to lower */{
             //change player
             Logger.info("Input was done: {}", command);
             changePlayer(playerState,resultState,boxesState);

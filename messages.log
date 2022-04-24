@@ -1,34 +1,28 @@
-2022-04-24 02:45:29 [main] controllers.Controller.waitForCommands()
+2022-04-24 14:37:34 [main] controllers.Controller.waitForCommands()
 INFO: Input was number: 0
-2022-04-24 02:45:32 [main] controllers.Controller.waitForCommands()
+2022-04-24 14:37:34 [main] controllers.Controller.waitForCommands()
 INFO: Input was number: 1
-2022-04-24 02:45:35 [main] controllers.Controller.waitForCommands()
-INFO: Input was number: 1
-2022-04-24 02:45:35 [main] controllers.Controller.playerMove()
-ERROR: Box selected does not exist or is already empty
-2022-04-24 02:45:40 [main] controllers.Controller.waitForCommands()
+2022-04-24 14:37:38 [main] controllers.Controller.waitForCommands()
 INFO: Input was number: 2
-2022-04-24 02:45:44 [main] controllers.Controller.waitForCommands()
+2022-04-24 14:37:39 [main] controllers.Controller.waitForCommands()
 INFO: Input was number: 3
-2022-04-24 02:45:48 [main] controllers.Controller.waitForCommands()
+2022-04-24 14:37:53 [main] controllers.Controller.waitForCommands()
 INFO: Input was number: 4
-2022-04-24 02:45:50 [main] controllers.Controller.waitForCommands()
+2022-04-24 14:37:54 [main] controllers.Controller.waitForCommands()
 INFO: Input was number: 5
-2022-04-24 02:45:50 [main] controllers.Controller.waitForCommands()
+2022-04-24 14:37:55 [main] controllers.Controller.waitForCommands()
 INFO: Input was number: 6
-2022-04-24 02:45:51 [main] controllers.Controller.waitForCommands()
+2022-04-24 14:37:59 [main] controllers.Controller.waitForCommands()
 INFO: Input was number: 7
-2022-04-24 02:45:51 [main] controllers.Controller.waitForCommands()
+2022-04-24 14:38:00 [main] controllers.Controller.waitForCommands()
 INFO: Input was number: 8
-2022-04-24 02:45:52 [main] controllers.Controller.waitForCommands()
+2022-04-24 14:38:01 [main] controllers.Controller.waitForCommands()
 INFO: Input was number: 9
-2022-04-24 02:45:53 [main] controllers.Controller.waitForCommands()
-INFO: Input was number: 10
-2022-04-24 02:45:58 [main] controllers.Controller.waitForCommands()
-INFO: Input was done: Done
-2022-04-24 02:46:06 [main] controllers.Controller.waitForCommands()
+2022-04-24 14:38:05 [main] controllers.Controller.waitForCommands()
+INFO: Input was number: 11
+2022-04-24 14:38:06 [main] controllers.Controller.waitForCommands()
 INFO: Input was number: 12
-2022-04-24 02:46:07 [main] controllers.Controller.waitForCommands()
+2022-04-24 14:38:07 [main] controllers.Controller.waitForCommands()
 INFO: Input was number: 13
-2022-04-24 02:46:08 [main] controllers.Controller.waitForCommands()
+2022-04-24 14:38:08 [main] controllers.Controller.waitForCommands()
 INFO: Input was number: 14
