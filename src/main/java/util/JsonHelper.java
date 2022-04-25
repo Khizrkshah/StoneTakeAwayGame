@@ -31,6 +31,10 @@ public class JsonHelper {
             e.printStackTrace();
         }
     }
+
+    public static File read(Main main) {
+        return new File(main.getClass().getClassLoader().getResource("data.json").getFile());
+    }
 }
 
 
