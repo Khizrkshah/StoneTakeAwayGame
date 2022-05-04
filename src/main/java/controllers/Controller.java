@@ -2,17 +2,19 @@ package controllers;
 
 import model.BoxesState;
 import java.util.*;
-
 import model.PlayerState;
 import model.ResultState;
 import org.tinylog.Logger;
+import util.GameData;
+import util.JsonHelper;
 
 public class Controller {
 
+    /*
     /**
      * Method for handling stone removal from boxes.
      * @param playerSelectedBox value player passes to represent the box to remove the stone from
-     */
+
     public void playerMove(PlayerState playerState, BoxesState boxesState, Integer playerSelectedBox, ResultState resultState){
         boolean validMove = false;
 
@@ -77,10 +79,18 @@ public class Controller {
 
     }
 
+    /*
     public void waitForCommands(PlayerState playerState,BoxesState boxesState,ResultState resultState){
         String command;
         Scanner sc = new Scanner(System.in);
         command = sc.nextLine();
+
+        switch(boolean array index)
+        case 0:
+           command = 0
+           break;
+         so on
+
 
 
         if (command.matches("[0-9]+")) {
@@ -88,7 +98,8 @@ public class Controller {
             playerMove(playerState, boxesState, Integer.parseInt(command), resultState);
             //throw error if command is less than 0
 
-        }else if (command.contains("Done") && playerState.getAvailableTurns() != 2)/* check functionality of to lower */{
+        }else if (command.contains("Done") && playerState.getAvailableTurns() != 2)// check functionality of to lower
+        {
             //change player
             Logger.info("Input was done: {}", command);
             changePlayer(playerState,resultState,boxesState);
@@ -97,6 +108,7 @@ public class Controller {
             }
         }
     }
+
 
     public void changePlayer(PlayerState playerState, ResultState resultState, BoxesState boxesState){
         if (playerState.getIsPlayerOnesTurn() == true){
@@ -118,7 +130,7 @@ public class Controller {
     /**
      * Determines wether the game has reached the goal state
      * @return true or false depending on wether the game has reached the goal state
-     */
+
     public boolean isGoalState(BoxesState boxesState,ResultState resultState,PlayerState playerState){
         String winnerName;
 
@@ -133,6 +145,57 @@ public class Controller {
         resultState.setWinner(winnerName);
         return true;
     }
+
+    public void appLaunch(){
+        ResultState resultState = new ResultState();
+        BoxesState boxesState = new BoxesState();
+        PlayerState playerState = new PlayerState();
+        Controller controller = new Controller();
+        Scanner sc = new Scanner(System.in);
+
+        boxesState.initializeBoxes();
+        System.out.println("Enter Player One Name:");
+        playerState.setPlayerOneName(sc.nextLine());
+        System.out.println("Enter Player Two Name: ");
+        playerState.setPlayerTwoName(sc.nextLine());
+        controller.printInstructions(playerState.getIsPlayerOnesTurn(),boxesState);
+        while(controller.isGoalState(boxesState,resultState,playerState) == false) {
+            //controller.waitForCommands(playerState, boxesState, resultState);
+            String command;
+            //Scanner sc = new Scanner(System.in);
+            command = sc.nextLine();
+        /*
+        switch(boolean array index)
+        case 0:
+           command = 0
+           break;
+         so on
+
+
+
+            if (command.matches("[0-9]+")) {
+                Logger.info("Input was number: {}", command);
+                playerMove(playerState, boxesState, Integer.parseInt(command), resultState);
+                //throw error if command is less than 0
+
+            }else if (command.contains("Done") && playerState.getAvailableTurns() != 2)/* check functionality of to lower {
+                //change player
+                //Logger.info("Input was done: {}", command);
+                //changePlayer(playerState,resultState,boxesState);
+                //if (isGoalState(boxesState,resultState,playerState) == false) {
+                  //  printInstructions(playerState.getIsPlayerOnesTurn(), boxesState);
+                }
+            }
+        }
+        System.out.println("Game is over!");
+        System.out.println(resultState.getNumberOfMoves());
+        System.out.println(resultState.getWinner());
+
+        GameData gameData = new GameData(boxesState.startDateAndTime,playerState.getPlayerOneName(),playerState.getPlayerTwoName(), resultState.getWinner(), resultState.getNumberOfMoves());
+        JsonHelper.write(gameData);
+    }
+
+    */
 
 
 }
