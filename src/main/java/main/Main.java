@@ -1,14 +1,12 @@
 package main;
 
 import controllers.GamePlayController;
+import javafx.application.Application;
 
 public class Main {
 
 
-    /**
-     * Main function.
-     * @param args
-     */
+    /*
     public static void main(String[] args) {
 
         /*
@@ -59,10 +57,15 @@ public class Main {
         GameData gameData = new GameData(boxesState.startDateAndTime,playerState.getPlayerOneName(),playerState.getPlayerTwoName(), resultState.getWinner(), resultState.getNumberOfMoves());
         JsonHelper.write(gameData);
 
-        */
 
-        GamePlayController gamePlayController = new GamePlayController();
-        gamePlayController.appLaunch();
 
+        //GamePlayController gamePlayController = new GamePlayController();
+        //gamePlayController.appLaunch();
+
+
+    }*/
+    public static void main(String[] args) {
+        Application.launch(Launcher.class,args);
     }
+
 }
