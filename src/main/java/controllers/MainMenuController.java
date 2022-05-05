@@ -51,8 +51,8 @@ public class MainMenuController {
             a.setContentText("Please Input Names!");
             a.show();
         }else{
-            playerState.setPlayerOneName(playerOneNameInput.toString());
-            playerState.setPlayerTwoName(playerTwoNameInput.toString());
+            playerState.setPlayerOneName(playerOneNameInput.getText());
+            playerState.setPlayerTwoName(playerTwoNameInput.getText());
             Launcher.mainMenuStage.hide();
             Launcher.gamePlayStage.show();
         }

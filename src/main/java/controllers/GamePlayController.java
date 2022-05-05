@@ -12,6 +12,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
 import main.Launcher;
 import model.BoxesState;
+import model.PlayerState;
 
 import java.net.URISyntaxException;
 import java.util.*;
@@ -40,6 +41,7 @@ public class GamePlayController {
     private GridPane board;
 
     private BoxesState model = new BoxesState();
+    PlayerState playerState = new PlayerState();
 
     Image stoneImage;
 
@@ -92,10 +94,17 @@ public class GamePlayController {
         var square = (StackPane) event.getSource();
         var col = GridPane.getColumnIndex(square);
         //System.out.printf("Click on square (%d)%n", col);
-        model.move(col);
+        model.move(col, model, playerState);
         System.out.println(model);
+        if(playerState.getIsPlayerOnesTurn() == true){
+            playerTurnText.setText(playerState.getPlayerOneName() + "'s Turn!");
+        }else{
+            playerTurnText.setText(playerState.getPlayerTwoName() + "'s Turn!");
+        }
+        availableTurnsText.setText("Available turns: " + playerState.getAvailableTurns());
         if (model.isGoalState(model)){
             System.out.println("reached goal state.");
+            infoText.setText("Game is over!");
         }
 
     }
@@ -108,10 +117,12 @@ public class GamePlayController {
     }
 
     @FXML
-    void mainMenuBUttonClicked(ActionEvent event) {
+    void mainMenuButtonClicked(ActionEvent event) {
         Launcher.gamePlayStage.hide();
         Launcher.mainMenuStage.show();
 
     }
+
+
 
 }

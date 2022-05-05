@@ -1,4 +1,10 @@
-2022-04-26 13:33:43 [main] controllers.GamePlayController.appLaunch()
-INFO: Input was number: 0
-2022-04-26 13:33:47 [main] controllers.GamePlayController.appLaunch()
-INFO: Input was number: 1
+2022-05-06 00:15:56 [JavaFX Application Thread] model.BoxesState.move()
+ERROR: Box is already empty
+2022-05-06 00:15:56 [JavaFX Application Thread] model.BoxesState.move()
+ERROR: Box is already empty
+2022-05-06 00:15:56 [JavaFX Application Thread] model.BoxesState.move()
+ERROR: Box is already empty
+2022-05-06 00:15:57 [JavaFX Application Thread] model.BoxesState.move()
+ERROR: Box is already empty
+2022-05-06 00:15:58 [JavaFX Application Thread] model.BoxesState.move()
+ERROR: Box is already empty

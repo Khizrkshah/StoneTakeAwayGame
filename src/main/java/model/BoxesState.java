@@ -29,6 +29,7 @@ public class BoxesState {
 
     private ReadOnlyObjectWrapper<Square>[] boxes = new ReadOnlyObjectWrapper[numberOfBoxes];
 
+
     public BoxesState(){
         Random random = new Random();
         int emptyBoxIndex = random.nextInt(14);
@@ -51,13 +52,46 @@ public class BoxesState {
         return boxes[i].get();
     }
 
-    public void move(int i){
+    public void move(int i, BoxesState model, PlayerState playerState){
+        boolean validMove = false;
 
+        if(boxes[i].get() != Square.HIDDEN){
+            if(playerState.getAvailableTurns() == 2 && playerState.isPlayerDone() == false){
+                playerState.setFirstBoxSelection(i);
+                boxes[i].set(
+                        switch(boxes[i].get()){
+                            case VISIBLE, HIDDEN -> Square.HIDDEN;
+                        }
+                );
+                playerState.setAvailableTurns(playerState.getAvailableTurns() - 1);
+                validMove = true;
+            }else if(playerState.getAvailableTurns() == 1 && playerState.isPlayerDone() == false){
+                if (playerState.getFirstBoxSelection() > playerState.getFirstBoxSelection() + 1 || playerState.getFirstBoxSelection() < playerState.getFirstBoxSelection() - 1){
+                    Logger.error("Non Adjacent box chosen");
+                }
+                else{
+                    playerState.setSecondBoxSelection(i);
+                    boxes[i].set(
+                            switch(boxes[i].get()){
+                                case VISIBLE, HIDDEN -> Square.HIDDEN;
+                            }
+                    );
+                    playerState.setAvailableTurns(playerState.getAvailableTurns() - 1);
+                    if(isGoalState(model) == false );{
+                        changePlayer(playerState);
+                    }
+                }
+            }
+        }else{
+            Logger.error("Box is already empty");
+        }
+       /*
         boxes[i].set(
                 switch(boxes[i].get()){
                     case VISIBLE, HIDDEN -> Square.HIDDEN;
                 }
         );
+        */
     }
 
     public String toString(){
@@ -74,6 +108,15 @@ public class BoxesState {
             return false;
         }
         return true;
+    }
+
+    public void changePlayer(PlayerState playerState){
+        if(playerState.getIsPlayerOnesTurn() == true){
+            playerState.setIsPlayerOnesTurn(false);
+        }else{
+            playerState.setIsPlayerOnesTurn(true);
+        }
+        playerState.setAvailableTurns(2);
     }
 
     public static void main(String[] args){
