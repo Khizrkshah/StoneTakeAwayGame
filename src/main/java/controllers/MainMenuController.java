@@ -47,14 +47,14 @@ public class MainMenuController {
     @FXML
     void startGamePressed(ActionEvent event) {
         if (playerOneNameInput.getText().isEmpty() && playerTwoNameInput.getText().isEmpty()){
+            a.setAlertType(Alert.AlertType.ERROR);
+            a.setContentText("Please Input Names!");
+            a.show();
+        }else{
             playerState.setPlayerOneName(playerOneNameInput.toString());
             playerState.setPlayerTwoName(playerTwoNameInput.toString());
             Launcher.mainMenuStage.hide();
             Launcher.gamePlayStage.show();
-        }else{
-            a.setAlertType(Alert.AlertType.ERROR);
-            a.setContentText("Please Input Names!");
-            a.show();
         }
 
     }
