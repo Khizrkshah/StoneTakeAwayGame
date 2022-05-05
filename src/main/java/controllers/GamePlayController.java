@@ -10,6 +10,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
+import main.Launcher;
 import model.BoxesState;
 
 import java.net.URISyntaxException;
@@ -101,11 +102,15 @@ public class GamePlayController {
 
     @FXML
     void highScoresButtonClicked(ActionEvent event) {
+        Launcher.gamePlayStage.hide();
+        Launcher.highScoresStage.show();
 
     }
 
     @FXML
     void mainMenuBUttonClicked(ActionEvent event) {
+        Launcher.gamePlayStage.hide();
+        Launcher.mainMenuStage.show();
 
     }
 
