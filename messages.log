@@ -1,2 +1,10 @@
-2022-05-10 20:40:27 [JavaFX Application Thread] controllers.GamePlayController.handleMouseClick()
+2022-05-10 23:48:32 [JavaFX Application Thread] controllers.GamePlayController.handleMouseClick()
+INFO: Reached Goal State!
+2022-05-10 23:48:53 [JavaFX Application Thread] controllers.GamePlayController.handleMouseClick()
+INFO: Reached Goal State!
+2022-05-10 23:49:19 [JavaFX Application Thread] controllers.GamePlayController.doneButtonPressed()
+WARN: No move has been made! make a move first.
+2022-05-10 23:49:22 [JavaFX Application Thread] controllers.GamePlayController.handleMouseClick()
+INFO: Reached Goal State!
+2022-05-10 23:49:38 [JavaFX Application Thread] controllers.GamePlayController.handleMouseClick()
 INFO: Reached Goal State!

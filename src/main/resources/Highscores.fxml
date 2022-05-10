@@ -18,7 +18,7 @@
       <TableView fx:id="highScoresTable" layoutX="182.0" layoutY="46.0" prefHeight="290.0" prefWidth="600.0" style="-fx-background-color: cyan;" AnchorPane.bottomAnchor="46.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="46.0">
         <columns>
           <TableColumn fx:id="nameColumn" prefWidth="300.0" text="Name" />
-          <TableColumn fx:id="scoreColumn" minWidth="0.0" prefWidth="300.0" text="Score" />
+          <TableColumn fx:id="numberOfWinsColumn" minWidth="0.0" prefWidth="300.0" text="Number of Wins" />
         </columns>
       </TableView>
    </children>
