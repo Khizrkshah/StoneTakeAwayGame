@@ -14,6 +14,10 @@ import java.util.List;
 
 public class JsonHelper {
 
+    /**
+     * Method used to write all the current Game Data into the data.json file.
+     * @param gameData object of class GameData containing information to be written into data.json file
+     */
     public static void write(GameData gameData) {
         File file = new File(Main.class.getClassLoader().getResource("data.json").getFile());
         ObjectMapper mapper = new ObjectMapper().registerModule(new JavaTimeModule());
@@ -32,8 +36,12 @@ public class JsonHelper {
         }
     }
 
-    public static File read(Main main) {
-        return new File(main.getClass().getClassLoader().getResource("data.json").getFile());
+    /**
+     * Used to read the data.json file.
+     * @return the data.json File
+     */
+    public static File read() {
+        return new File(Main.class.getClassLoader().getResource("data.json").getFile());
     }
 }
 
