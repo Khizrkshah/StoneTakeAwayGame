@@ -82,7 +82,7 @@ public class GameState {
                             }
                     );
                     playerState.setAvailableTurns(playerState.getAvailableTurns() - 1);
-                    if(isGoalState(model) == false );{
+                    if(isGoalState(model) == false ){
                         changePlayer(playerState);
                     }
                 }

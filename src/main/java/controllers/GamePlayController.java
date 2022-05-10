@@ -56,7 +56,8 @@ public class GamePlayController {
             var square = createSquare(i, j);
             board.add(square, j, i);
         }
-        playerTurnText.setText(playerState.getPlayerOneName().getValue() + "'s Turn!");
+        playerTurnText.setText(playerState.playerOneNameProperty().getValue() + "'s Turn!");
+        /* TODO fix value ending up as null for starting player*/
         infoText.setText("Select a Box!");
 
     }
@@ -92,8 +93,9 @@ public class GamePlayController {
         var col = GridPane.getColumnIndex(square);
         //System.out.printf("Click on square (%d)%n", col);
         model.move(col, model, playerState);
+        resultState.setNumberOfMoves(resultState.getNumberOfMoves() + 1);
         System.out.println(model);
-        if(playerState.getIsPlayerOnesTurn() == true){
+        if(playerState.getIsPlayerOnesTurn()){
             playerTurnText.setText(playerState.playerOneNameProperty().getValue() + "'s Turn!");
         }else{
             playerTurnText.setText(playerState.playerTwoNameProperty().getValue() + "'s Turn!");
@@ -101,8 +103,15 @@ public class GamePlayController {
         availableTurnsText.setText("Available turns: " + playerState.getAvailableTurns());
         if (model.isGoalState(model)){
             Logger.info("Reached Goal State!");
-            infoText.setText("Game is over! ");
+            if(playerState.getIsPlayerOnesTurn()){
+                resultState.setWinner(playerState.playerOneNameProperty().getValue());
+            }else{
+                resultState.setWinner(playerState.playerTwoNameProperty().getValue());
+            }
+            infoText.setText(resultState.getWinner() + " Wins!");
+            System.out.println(resultState.getWinner() + " Wins!");
         }
+
 
     }
 

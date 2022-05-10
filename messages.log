@@ -1,12 +1,8 @@
-2022-05-10 16:45:45 [JavaFX Application Thread] model.GameState.move()
-ERROR: Non Adjacent box chosen
-2022-05-10 16:45:45 [JavaFX Application Thread] model.GameState.move()
-ERROR: Non Adjacent box chosen
-2022-05-10 16:45:46 [JavaFX Application Thread] model.GameState.move()
-ERROR: Non Adjacent box chosen
-2022-05-10 16:45:47 [JavaFX Application Thread] model.GameState.move()
-ERROR: Non Adjacent box chosen
-2022-05-10 16:45:47 [JavaFX Application Thread] model.GameState.move()
-ERROR: Non Adjacent box chosen
-2022-05-10 16:46:22 [JavaFX Application Thread] controllers.GamePlayController.handleMouseClick()
+2022-05-10 20:30:45 [JavaFX Application Thread] controllers.MainMenuController.startGamePressed()
+ERROR: Player two name not entered
+2022-05-10 20:30:59 [JavaFX Application Thread] controllers.MainMenuController.startGamePressed()
+ERROR: Player one name not entered
+2022-05-10 20:31:23 [JavaFX Application Thread] controllers.GamePlayController.handleMouseClick()
+INFO: Reached Goal State!
+2022-05-10 20:31:52 [JavaFX Application Thread] controllers.GamePlayController.handleMouseClick()
 INFO: Reached Goal State!
