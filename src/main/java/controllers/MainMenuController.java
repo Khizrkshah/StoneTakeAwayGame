@@ -67,6 +67,7 @@ public class MainMenuController {
             gamePlayLoader.setLocation(getClass().getClassLoader().getResource("GamePlay.fxml"));
             Parent root = gamePlayLoader.load();
             Launcher.gamePlayStage.setScene(new Scene(root));
+            Launcher.gamePlayStage.setResizable(false);
             GamePlayController gamePlayController = gamePlayLoader.getController();
             gamePlayController.playerState.playerOneNameProperty().bindBidirectional(playerOneNameInput.textProperty());
             gamePlayController.playerState.playerTwoNameProperty().bindBidirectional(playerTwoNameInput.textProperty());
