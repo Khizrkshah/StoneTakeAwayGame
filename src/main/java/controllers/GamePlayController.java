@@ -1,11 +1,9 @@
 package controllers;
 
-import javafx.application.Platform;
 import javafx.beans.binding.ObjectBinding;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -13,15 +11,12 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
 import main.Launcher;
-import model.BoxesState;
+import model.GameState;
 import model.PlayerState;
+import model.ResultState;
 import org.tinylog.Logger;
 
 import java.net.URISyntaxException;
-import java.util.*;
-
-
-import java.util.Scanner;
 
 public class GamePlayController {
 
@@ -37,8 +32,9 @@ public class GamePlayController {
     @FXML
     private GridPane board;
 
-    private BoxesState model = new BoxesState();
+    private GameState model = new GameState();
     PlayerState playerState = new PlayerState();
+    ResultState resultState = new ResultState();
     Alert a = new Alert(Alert.AlertType.NONE);
 
     Image stoneImage;

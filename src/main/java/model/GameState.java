@@ -3,26 +3,15 @@ package model;
 import javafx.beans.property.ReadOnlyObjectProperty;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import org.tinylog.Logger;
-import util.GameData;
-import util.JsonHelper;
 
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.Random;
 import java.time.LocalDateTime;
-import java.util.Scanner;
-import model.PlayerState;
-import model.ResultState;
-import org.tinylog.Logger;
-import util.GameData;
-import util.JsonHelper;
-import java.util.*;
 
 
 /**
  * Class representing the state of the boxes.
  */
-public class BoxesState {
+public class GameState {
 
     public LocalDateTime startDateAndTime;
     public static int numberOfBoxes = 15;
@@ -30,7 +19,7 @@ public class BoxesState {
     private ReadOnlyObjectWrapper<Square>[] boxes = new ReadOnlyObjectWrapper[numberOfBoxes];
 
 
-    public BoxesState(){
+    public GameState(){
         Random random = new Random();
         int emptyBoxIndex = random.nextInt(14);
         for(var i = 0; i < numberOfBoxes; i++){
@@ -52,7 +41,7 @@ public class BoxesState {
         return boxes[i].get();
     }
 
-    public void move(int i, BoxesState model, PlayerState playerState){
+    public void move(int i, GameState model, PlayerState playerState){
         boolean validMove = false;
 
         if(boxes[i].get() != Square.HIDDEN){
@@ -102,7 +91,7 @@ public class BoxesState {
         return sb.toString();
     }
 
-    public boolean isGoalState(BoxesState model){
+    public boolean isGoalState(GameState model){
 
         if (model.toString().contains(" 0 ")) {
             return false;
@@ -120,7 +109,7 @@ public class BoxesState {
     }
 
     public static void main(String[] args){
-        var model = new BoxesState();
+        var model = new GameState();
         System.out.println(model);
 
     }
