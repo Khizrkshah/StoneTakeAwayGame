@@ -13,6 +13,7 @@ public class Launcher extends Application {
     public static Stage mainMenuStage = new Stage();
     public static Stage gamePlayStage = new Stage();
     public static Stage highScoresStage = new Stage();
+    public static Stage rulesStage = new Stage();
 
     @Override
     public void start(Stage firstStage) throws IOException {
@@ -33,6 +34,13 @@ public class Launcher extends Application {
         highScoresStage.setScene(highScoresScene);
         highScoresStage.hide();
         highScoresStage.setResizable(false);
+
+        Parent rulesRoot = FXMLLoader.load(Launcher.class.getClassLoader().getResource("Rules.fxml"));
+        Scene rulesScene = new Scene(rulesRoot);
+        rulesStage.setTitle("Rules");
+        rulesStage.setScene(rulesScene);
+        rulesStage.hide();
+        rulesStage.setResizable(false);
     }
 
 }

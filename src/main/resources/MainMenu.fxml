@@ -39,5 +39,6 @@
             <Font name="System Bold" size="20.0" />
          </font>
       </Text>
+      <Button fx:id="rulesButton" layoutX="501.0" layoutY="98.0" mnemonicParsing="false" onAction="#rulesButtonPressed" text="Rules" />
    </children>
 </AnchorPane>

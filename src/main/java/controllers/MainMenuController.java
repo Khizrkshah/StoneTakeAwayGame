@@ -65,4 +65,11 @@ public class MainMenuController {
 
     }
 
+    @FXML
+    void rulesButtonPressed(ActionEvent event) {
+        Launcher.mainMenuStage.hide();
+        Launcher.rulesStage.show();
+
+    }
+
 }
