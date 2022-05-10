@@ -1,4 +1,6 @@
 package model;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import lombok.Data;
 
 /**
@@ -7,8 +9,8 @@ import lombok.Data;
 @Data
 public class PlayerState {
 
-   private String playerOneName;
-   private String playerTwoName;
+   private StringProperty playerOneName = new SimpleStringProperty();
+   private StringProperty playerTwoName = new SimpleStringProperty();
    private Boolean isPlayerOnesTurn;
    private int availableTurns;
    private int firstBoxSelection;
@@ -20,5 +22,8 @@ public class PlayerState {
         playerDone = false;
         availableTurns = 2;
     }
+
+    public StringProperty playerOneNameProperty(){ return playerOneName; }
+    public StringProperty playerTwoNameProperty(){ return playerTwoName; }
 
 }

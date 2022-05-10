@@ -66,7 +66,7 @@ public class BoxesState {
                 playerState.setAvailableTurns(playerState.getAvailableTurns() - 1);
                 validMove = true;
             }else if(playerState.getAvailableTurns() == 1 && playerState.isPlayerDone() == false){
-                if (playerState.getFirstBoxSelection() > playerState.getFirstBoxSelection() + 1 || playerState.getFirstBoxSelection() < playerState.getFirstBoxSelection() - 1){
+                if (i > playerState.getFirstBoxSelection() + 1 || i < playerState.getFirstBoxSelection() - 1){
                     Logger.error("Non Adjacent box chosen");
                 }
                 else{
@@ -124,6 +124,8 @@ public class BoxesState {
         System.out.println(model);
 
     }
+
+    /* TODO add done button for players to end after first turn*/
 
     /*
     /**

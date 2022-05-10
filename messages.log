@@ -1,10 +1,8 @@
-2022-05-06 00:15:56 [JavaFX Application Thread] model.BoxesState.move()
-ERROR: Box is already empty
-2022-05-06 00:15:56 [JavaFX Application Thread] model.BoxesState.move()
-ERROR: Box is already empty
-2022-05-06 00:15:56 [JavaFX Application Thread] model.BoxesState.move()
-ERROR: Box is already empty
-2022-05-06 00:15:57 [JavaFX Application Thread] model.BoxesState.move()
-ERROR: Box is already empty
-2022-05-06 00:15:58 [JavaFX Application Thread] model.BoxesState.move()
-ERROR: Box is already empty
+2022-05-10 16:02:03 [JavaFX Application Thread] model.BoxesState.move()
+ERROR: Non Adjacent box chosen
+2022-05-10 16:02:37 [JavaFX Application Thread] model.BoxesState.move()
+ERROR: Non Adjacent box chosen
+2022-05-10 16:02:40 [JavaFX Application Thread] model.BoxesState.move()
+ERROR: Non Adjacent box chosen
+2022-05-10 16:02:54 [JavaFX Application Thread] model.BoxesState.move()
+ERROR: Non Adjacent box chosen

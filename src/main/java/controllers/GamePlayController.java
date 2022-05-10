@@ -1,5 +1,6 @@
 package controllers;
 
+import javafx.application.Platform;
 import javafx.beans.binding.ObjectBinding;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -97,9 +98,9 @@ public class GamePlayController {
         model.move(col, model, playerState);
         System.out.println(model);
         if(playerState.getIsPlayerOnesTurn() == true){
-            playerTurnText.setText(playerState.getPlayerOneName() + "'s Turn!");
+            playerTurnText.setText(playerState.playerOneNameProperty().getValue() + "'s Turn!");
         }else{
-            playerTurnText.setText(playerState.getPlayerTwoName() + "'s Turn!");
+            playerTurnText.setText(playerState.playerTwoNameProperty().getValue() + "'s Turn!");
         }
         availableTurnsText.setText("Available turns: " + playerState.getAvailableTurns());
         if (model.isGoalState(model)){

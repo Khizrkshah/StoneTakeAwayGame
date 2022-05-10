@@ -1,14 +1,24 @@
 package controllers;
 
+import com.sun.source.util.ParameterNameProvider;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 import main.Launcher;
 import model.PlayerState;
+
+import java.io.IOException;
+import java.util.function.LongUnaryOperator;
+import java.util.logging.Logger;
 
 public class MainMenuController {
 
@@ -29,7 +39,6 @@ public class MainMenuController {
 
     Alert a = new Alert(Alert.AlertType.NONE);
 
-    PlayerState playerState = new PlayerState();
 
     @FXML
     void exitPressed(ActionEvent event) {
@@ -45,14 +54,19 @@ public class MainMenuController {
     }
 
     @FXML
-    void startGamePressed(ActionEvent event) {
+    void startGamePressed(ActionEvent event) throws IOException {
         if (playerOneNameInput.getText().isEmpty() && playerTwoNameInput.getText().isEmpty()){
             a.setAlertType(Alert.AlertType.ERROR);
             a.setContentText("Please Input Names!");
             a.show();
         }else{
-            playerState.setPlayerOneName(playerOneNameInput.getText());
-            playerState.setPlayerTwoName(playerTwoNameInput.getText());
+            FXMLLoader gamePlayLoader = new FXMLLoader();
+            gamePlayLoader.setLocation(getClass().getClassLoader().getResource("GamePlay.fxml"));
+            Parent root = gamePlayLoader.load();
+            Launcher.gamePlayStage.setScene(new Scene(root));
+            GamePlayController gamePlayController = gamePlayLoader.getController();
+            gamePlayController.playerState.playerOneNameProperty().bindBidirectional(playerOneNameInput.textProperty());
+            gamePlayController.playerState.playerTwoNameProperty().bindBidirectional(playerTwoNameInput.textProperty());
             Launcher.mainMenuStage.hide();
             Launcher.gamePlayStage.show();
         }
