@@ -1,8 +1,2 @@
-2022-05-10 20:30:45 [JavaFX Application Thread] controllers.MainMenuController.startGamePressed()
-ERROR: Player two name not entered
-2022-05-10 20:30:59 [JavaFX Application Thread] controllers.MainMenuController.startGamePressed()
-ERROR: Player one name not entered
-2022-05-10 20:31:23 [JavaFX Application Thread] controllers.GamePlayController.handleMouseClick()
-INFO: Reached Goal State!
-2022-05-10 20:31:52 [JavaFX Application Thread] controllers.GamePlayController.handleMouseClick()
+2022-05-10 20:40:27 [JavaFX Application Thread] controllers.GamePlayController.handleMouseClick()
 INFO: Reached Goal State!

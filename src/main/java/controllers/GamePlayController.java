@@ -15,6 +15,8 @@ import model.GameState;
 import model.PlayerState;
 import model.ResultState;
 import org.tinylog.Logger;
+import util.GameData;
+import util.JsonHelper;
 
 import java.net.URISyntaxException;
 
@@ -110,6 +112,7 @@ public class GamePlayController {
             }
             infoText.setText(resultState.getWinner() + " Wins!");
             System.out.println(resultState.getWinner() + " Wins!");
+            writeToJsonFile();
         }
 
 
@@ -149,6 +152,14 @@ public class GamePlayController {
         }
         availableTurnsText.setText("Available turns: " + playerState.getAvailableTurns());
 
+    }
+
+    /**
+     * Writes an object of GameData to Json file using the JsonHelper class
+     */
+    private void writeToJsonFile(){
+        GameData gameData = new GameData(model.startDateAndTime,playerState.playerOneNameProperty().getValue(),playerState.playerTwoNameProperty().getValue(), resultState.getWinner(), resultState.getNumberOfMoves());
+        JsonHelper.write(gameData);
     }
 
 
