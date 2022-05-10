@@ -74,13 +74,7 @@ public class GameState {
         }else{
             Logger.error("Box is already empty");
         }
-       /*
-        boxes[i].set(
-                switch(boxes[i].get()){
-                    case VISIBLE, HIDDEN -> Square.HIDDEN;
-                }
-        );
-        */
+
     }
 
     public String toString(){
@@ -113,29 +107,5 @@ public class GameState {
         System.out.println(model);
 
     }
-
-
-
-    /*
-    /**
-     * Initializes the ArrayList of boxes.
-
-    public void initializeBoxes(){
-        Random random = new Random();
-        int emptyBoxIndex = random.nextInt(14);
-        for (int i = 0; i < 15; i++){
-            if (i == emptyBoxIndex){
-                boxes.add(0);
-            }else{
-                boxes.add(1);
-            }
-        }
-        startDateAndTime = LocalDateTime.now();
-
-    }
-*/
-
-
-
 
 }

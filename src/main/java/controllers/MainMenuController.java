@@ -23,19 +23,11 @@ import java.util.logging.Logger;
 public class MainMenuController {
 
     @FXML
-    private Button exitButton;
-
-    @FXML
-    private Button highScoresButton;
-
-    @FXML
     private TextField playerOneNameInput;
 
     @FXML
     private TextField playerTwoNameInput;
 
-    @FXML
-    private Button startGameButton;
 
     Alert a = new Alert(Alert.AlertType.NONE);
 

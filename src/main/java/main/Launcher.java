@@ -27,14 +27,6 @@ public class Launcher extends Application {
         firstStage.setResizable(false);
 
 
-        //Parent gamePlayRoot = FXMLLoader.load(Launcher.class.getClassLoader().getResource("GamePlay.fxml"));
-        //Scene gamePlayScene = new Scene(gamePlayRoot);
-        //gamePlayStage.setTitle("Stone TakeAway");
-        //gamePlayStage.setScene(gamePlayScene);
-        //gamePlayStage.hide();
-        //gamePlayStage.setResizable(false);
-
-
         Parent highScoresRoot = FXMLLoader.load(Launcher.class.getClassLoader().getResource("Highscores.fxml"));
         Scene highScoresScene = new Scene(highScoresRoot);
         highScoresStage.setTitle("HighScores");
