@@ -4,6 +4,7 @@ import javafx.application.Platform;
 import javafx.beans.binding.ObjectBinding;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -14,6 +15,7 @@ import javafx.scene.text.Text;
 import main.Launcher;
 import model.BoxesState;
 import model.PlayerState;
+import org.tinylog.Logger;
 
 import java.net.URISyntaxException;
 import java.util.*;
@@ -27,13 +29,7 @@ public class GamePlayController {
     private Text availableTurnsText;
 
     @FXML
-    private Button highScoresButton;
-
-    @FXML
     private Text infoText;
-
-    @FXML
-    private Button mainMenuButton;
 
     @FXML
     private Text playerTurnText;
@@ -43,6 +39,7 @@ public class GamePlayController {
 
     private BoxesState model = new BoxesState();
     PlayerState playerState = new PlayerState();
+    Alert a = new Alert(Alert.AlertType.NONE);
 
     Image stoneImage;
 
@@ -63,6 +60,9 @@ public class GamePlayController {
             var square = createSquare(i, j);
             board.add(square, j, i);
         }
+        playerTurnText.setText(playerState.getPlayerOneName().getValue() + "'s Turn!");
+        infoText.setText("Select a Box!");
+
     }
 
     private StackPane createSquare(int i, int j) {
@@ -104,23 +104,45 @@ public class GamePlayController {
         }
         availableTurnsText.setText("Available turns: " + playerState.getAvailableTurns());
         if (model.isGoalState(model)){
-            System.out.println("reached goal state.");
-            infoText.setText("Game is over!");
+            Logger.info("Reached Goal State!");
+            infoText.setText("Game is over! ");
         }
 
     }
 
     @FXML
     void highScoresButtonClicked(ActionEvent event) {
-        Launcher.gamePlayStage.hide();
+        Launcher.gamePlayStage.close();
         Launcher.highScoresStage.show();
 
     }
 
     @FXML
     void mainMenuButtonClicked(ActionEvent event) {
-        Launcher.gamePlayStage.hide();
+        Launcher.gamePlayStage.close();
         Launcher.mainMenuStage.show();
+
+    }
+
+
+    @FXML
+    void doneButtonPressed(ActionEvent event) {
+        if (playerState.getAvailableTurns() == 1){
+            model.changePlayer(playerState);
+        }else{
+            a.setAlertType(Alert.AlertType.WARNING);
+            a.setContentText("You must make atleast one move first!");
+            a.show();
+            Logger.warn("No move has been made! make a move first.");
+        }
+
+
+        if (playerState.getIsPlayerOnesTurn() == true){
+            playerTurnText.setText(playerState.getPlayerOneName().getValue() + "'s Turn!");
+        }else{
+            playerTurnText.setText(playerState.getPlayerTwoName().getValue() + "'s Turn!");
+        }
+        availableTurnsText.setText("Available turns: " + playerState.getAvailableTurns());
 
     }
 

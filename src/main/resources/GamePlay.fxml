@@ -51,7 +51,8 @@
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </padding>
       </GridPane>
-      <Button fx:id="mainMenuButton" layoutX="251.0" layoutY="415.0" mnemonicParsing="false" onAction="#mainMenuButtonClicked" text="Main Menu" />
+      <Button fx:id="mainMenuButton" layoutX="212.0" layoutY="415.0" mnemonicParsing="false" onAction="#mainMenuButtonClicked" text="Main Menu" />
       <Button fx:id="highScoresButton" layoutX="858.0" layoutY="415.0" mnemonicParsing="false" onAction="#highScoresButtonClicked" text="High Scores" />
+      <Button fx:id="doneButton" alignment="CENTER" layoutX="547.0" layoutY="415.0" mnemonicParsing="false" onAction="#doneButtonPressed" text="Done" />
    </children>
 </Pane>
