@@ -15,10 +15,10 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import main.Launcher;
 import model.PlayerState;
+import org.tinylog.Logger;
 
 import java.io.IOException;
 import java.util.function.LongUnaryOperator;
-import java.util.logging.Logger;
 
 public class MainMenuController {
 
@@ -51,6 +51,17 @@ public class MainMenuController {
             a.setAlertType(Alert.AlertType.ERROR);
             a.setContentText("Please Input Names!");
             a.show();
+            Logger.error("Player names not entered");
+        }else if(playerOneNameInput.getText().isEmpty() != true && playerTwoNameInput.getText().isEmpty()){
+            a.setAlertType(Alert.AlertType.ERROR);
+            a.setContentText("Please Input Player Two name!");
+            a.show();
+            Logger.error("Player two name not entered");
+        }else if(playerOneNameInput.getText().isEmpty() && playerTwoNameInput.getText().isEmpty() != true){
+            a.setAlertType(Alert.AlertType.ERROR);
+            a.setContentText("Please Input Player One name!");
+            a.show();
+            Logger.error("Player one name not entered");
         }else{
             FXMLLoader gamePlayLoader = new FXMLLoader();
             gamePlayLoader.setLocation(getClass().getClassLoader().getResource("GamePlay.fxml"));
