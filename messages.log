@@ -1,4 +1,12 @@
-2022-05-10 16:32:49 [JavaFX Application Thread] controllers.GamePlayController.doneButtonPressed()
-WARN: No move has been made! make a move first.
-2022-05-10 16:33:03 [JavaFX Application Thread] controllers.GamePlayController.doneButtonPressed()
-WARN: No move has been made! make a move first.
+2022-05-10 16:45:45 [JavaFX Application Thread] model.GameState.move()
+ERROR: Non Adjacent box chosen
+2022-05-10 16:45:45 [JavaFX Application Thread] model.GameState.move()
+ERROR: Non Adjacent box chosen
+2022-05-10 16:45:46 [JavaFX Application Thread] model.GameState.move()
+ERROR: Non Adjacent box chosen
+2022-05-10 16:45:47 [JavaFX Application Thread] model.GameState.move()
+ERROR: Non Adjacent box chosen
+2022-05-10 16:45:47 [JavaFX Application Thread] model.GameState.move()
+ERROR: Non Adjacent box chosen
+2022-05-10 16:46:22 [JavaFX Application Thread] controllers.GamePlayController.handleMouseClick()
+INFO: Reached Goal State!
