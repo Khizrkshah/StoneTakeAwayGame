@@ -4,6 +4,9 @@ import javafx.application.Platform;
 import javafx.beans.binding.ObjectBinding;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -19,6 +22,7 @@ import org.tinylog.Logger;
 import util.GameData;
 import util.JsonHelper;
 
+import java.io.IOException;
 import java.net.URISyntaxException;
 
 public class GamePlayController {
@@ -119,9 +123,11 @@ public class GamePlayController {
     }
 
     @FXML
-    void highScoresButtonClicked(ActionEvent event) {
+    void highScoresButtonClicked(ActionEvent event) throws IOException {
         Launcher.gamePlayStage.close();
-        Launcher.highScoresStage.show();
+        MainMenuController mainMenuController = new MainMenuController();
+        mainMenuController.highScoresPressed(event);
+
 
     }
 

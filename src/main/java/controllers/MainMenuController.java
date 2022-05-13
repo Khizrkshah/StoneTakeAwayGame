@@ -39,9 +39,18 @@ public class MainMenuController {
     }
 
     @FXML
-    void highScoresPressed(ActionEvent event) {
+    void highScoresPressed(ActionEvent event) throws IOException {
         Launcher.mainMenuStage.hide();
+        HighScoresController highScoresController = new HighScoresController();
+        FXMLLoader highScoresLoader = new FXMLLoader();
+        highScoresLoader.setLocation(getClass().getClassLoader().getResource("Highscores.fxml"));
+        highScoresLoader.setController(highScoresController);
+        Parent highScoresRoot = highScoresLoader.load();
+        Scene highScoresScene = new Scene(highScoresRoot);
+        Launcher.highScoresStage.setTitle("HighScores");
+        Launcher.highScoresStage.setScene(highScoresScene);
         Launcher.highScoresStage.show();
+        Launcher.highScoresStage.setResizable(false);
 
     }
 

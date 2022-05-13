@@ -28,13 +28,6 @@ public class Launcher extends Application {
         firstStage.setResizable(false);
 
 
-        Parent highScoresRoot = FXMLLoader.load(Launcher.class.getClassLoader().getResource("Highscores.fxml"));
-        Scene highScoresScene = new Scene(highScoresRoot);
-        highScoresStage.setTitle("HighScores");
-        highScoresStage.setScene(highScoresScene);
-        highScoresStage.hide();
-        highScoresStage.setResizable(false);
-
         Parent rulesRoot = FXMLLoader.load(Launcher.class.getClassLoader().getResource("Rules.fxml"));
         Scene rulesScene = new Scene(rulesRoot);
         rulesStage.setTitle("Rules");
