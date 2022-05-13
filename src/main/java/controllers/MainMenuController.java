@@ -63,14 +63,15 @@ public class MainMenuController {
             a.show();
             Logger.error("Player one name not entered");
         }else{
+            GamePlayController gamePlayController = new GamePlayController();
             FXMLLoader gamePlayLoader = new FXMLLoader();
             gamePlayLoader.setLocation(getClass().getClassLoader().getResource("GamePlay.fxml"));
+            gamePlayLoader.setController(gamePlayController);
             Parent root = gamePlayLoader.load();
-            Launcher.gamePlayStage.setScene(new Scene(root));
-            Launcher.gamePlayStage.setResizable(false);
-            GamePlayController gamePlayController = gamePlayLoader.getController();
             gamePlayController.playerState.playerOneNameProperty().bindBidirectional(playerOneNameInput.textProperty());
             gamePlayController.playerState.playerTwoNameProperty().bindBidirectional(playerTwoNameInput.textProperty());
+            Launcher.gamePlayStage.setScene(new Scene(root));
+            Launcher.gamePlayStage.setResizable(false);
             Launcher.mainMenuStage.hide();
             Launcher.gamePlayStage.show();
         }

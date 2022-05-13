@@ -1,5 +1,6 @@
 package controllers;
 
+import javafx.application.Platform;
 import javafx.beans.binding.ObjectBinding;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -58,8 +59,7 @@ public class GamePlayController {
             var square = createSquare(i, j);
             board.add(square, j, i);
         }
-        playerTurnText.setText(playerState.playerOneNameProperty().getValue() + "'s Turn!");
-        /* TODO fix value ending up as null for starting player*/
+        Platform.runLater(() -> playerTurnText.setText(playerState.playerOneNameProperty().getValue() + "'s Turn!"));
         infoText.setText("Select a Box!");
 
     }

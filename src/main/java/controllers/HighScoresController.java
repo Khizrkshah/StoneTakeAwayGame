@@ -3,6 +3,7 @@ package controllers;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -35,6 +36,20 @@ public class HighScoresController {
 
     @FXML
     void initialize(){
+        Platform.runLater(() -> fillHighScoresTable());
+    }
+
+    @FXML
+    void mainMenuButtonPressed(ActionEvent event) {
+        Launcher.highScoresStage.close();
+        Launcher.mainMenuStage.show();
+
+    }
+
+    /**
+     * Used to fill the TableView with HighScores information
+     */
+    public void fillHighScoresTable(){
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         numberOfWinsColumn.setCellValueFactory(new PropertyValueFactory<>("numberOfWins"));
 
@@ -66,14 +81,6 @@ public class HighScoresController {
         }catch (Exception e){
             e.printStackTrace();
         }
-
-    }
-
-    @FXML
-    void mainMenuButtonPressed(ActionEvent event) {
-        Launcher.highScoresStage.hide();
-        Launcher.mainMenuStage.show();
-
     }
 
 }
