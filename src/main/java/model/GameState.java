@@ -52,6 +52,18 @@ public class GameState {
     }
 
     /**
+     * Sets the Square to hidden on the index specified
+     * @param i the value of the index
+     */
+    public void setSquareToHidden(int i){
+        boxes[i].set(
+            switch(boxes[i].get()){
+                case VISIBLE, HIDDEN -> Square.HIDDEN;
+            }
+    );
+    }
+
+    /**
      * Handles the players move of selecting a box at a specific index and changing the value of the model to HIDDEN if the box is not already HIDDEN
      * and checks if the second selected box is adjacent to the first selected box and only considering that a valid move
      * using the playerState to determine wether the player is done and how many turns the player has left.
@@ -64,11 +76,7 @@ public class GameState {
         if(boxes[i].get() != Square.HIDDEN){
             if(playerState.getAvailableTurns() == 2 && playerState.isPlayerDone() == false){
                 playerState.setFirstBoxSelection(i);
-                boxes[i].set(
-                        switch(boxes[i].get()){
-                            case VISIBLE, HIDDEN -> Square.HIDDEN;
-                        }
-                );
+                setSquareToHidden(i);
                 playerState.setAvailableTurns(playerState.getAvailableTurns() - 1);
             }else if(playerState.getAvailableTurns() == 1 && playerState.isPlayerDone() == false){
                 if (i > playerState.getFirstBoxSelection() + 1 || i < playerState.getFirstBoxSelection() - 1){
@@ -76,11 +84,7 @@ public class GameState {
                 }
                 else{
                     playerState.setSecondBoxSelection(i);
-                    boxes[i].set(
-                            switch(boxes[i].get()){
-                                case VISIBLE, HIDDEN -> Square.HIDDEN;
-                            }
-                    );
+                    setSquareToHidden(i);
                     playerState.setAvailableTurns(playerState.getAvailableTurns() - 1);
                     if(isGoalState(model) == false ){
                         changePlayer(playerState);
@@ -127,6 +131,7 @@ public class GameState {
         }
         playerState.setAvailableTurns(2);
     }
+
 
     public static void main(String[] args){
         var model = new GameState();
