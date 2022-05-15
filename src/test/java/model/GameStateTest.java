@@ -26,6 +26,7 @@ class GameStateTest {
             model.setSquareToHidden(i);
         }
         assertSame(true, model.isGoalState(model));
+        assertFalse(!model.isGoalState(model), String.valueOf(false));
     }
 
     @Test
