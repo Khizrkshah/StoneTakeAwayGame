@@ -86,6 +86,7 @@ public class HighScoresController {
 
         }catch (Exception e){
             e.printStackTrace();
+            Logger.error(e.getMessage());
         }
     }
 

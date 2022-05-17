@@ -35,9 +35,13 @@ public class JsonHelper {
             }
             gameDataList.add(gameData);
             Logger.debug("Writing game data list to Json file {}",gameDataList);
+            Logger.debug(file.toURI());
+            Logger.debug(file.toString());
             writer.writeValue(file, gameDataList);
+            Logger.debug(file.toString());
         } catch (Exception e) {
             e.printStackTrace();
+            Logger.error(e.getMessage());
         }
     }
 

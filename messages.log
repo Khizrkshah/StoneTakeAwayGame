@@ -1,2 +1,4 @@
-2022-05-17 18:27:03 [main] model.GameState.move()
-ERROR: Box is already empty
+2022-05-17 20:44:40 [JavaFX Application Thread] controllers.HighScoresController.fillHighScoresTable()
+INFO: Loading Json file
+2022-05-17 20:44:40 [JavaFX Application Thread] controllers.HighScoresController.fillHighScoresTable()
+INFO: Populating High Scores table with the data from Json file
