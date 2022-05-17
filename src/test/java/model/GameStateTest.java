@@ -57,5 +57,10 @@ class GameStateTest {
         assertThrows(IndexOutOfBoundsException.class, () -> model.getSquare(model.numberOfBoxes));
     }
 
+    @Test
+    void setSquareToHidden(){
+        model.setSquareToHidden(0);
+        assertEquals(model.getSquare(0),new ReadOnlyObjectWrapper<>(model.getSquare(0)).getValue());
+    }
 
 }
