@@ -42,6 +42,20 @@ class GameStateTest {
 
     @Test
     void changePlayer() {
-
+        model.changePlayer(playerState);
+        assertFalse(playerState.getIsPlayerOnesTurn());
     }
+
+    @Test
+    void squareProperty(){
+        assertEquals(model.getSquare(0), new ReadOnlyObjectWrapper<>(model.getSquare(0)).getValue());
+    }
+
+    @Test
+    void getSquare(){
+        assertEquals(model.getSquare(0), new ReadOnlyObjectWrapper<>(model.getSquare(0)).getValue());
+        assertThrows(IndexOutOfBoundsException.class, () -> model.getSquare(model.numberOfBoxes));
+    }
+
+
 }

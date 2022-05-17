@@ -1,7 +1,9 @@
 package model;
 
+import javafx.application.Application;
 import javafx.beans.property.ReadOnlyObjectProperty;
 import javafx.beans.property.ReadOnlyObjectWrapper;
+import main.Launcher;
 import org.tinylog.Logger;
 
 import java.util.Random;
@@ -97,6 +99,10 @@ public class GameState {
 
     }
 
+    /**
+     * Returns a String of ordinals of boxes
+     * @return String of ordinals of boxes
+     */
     public String toString(){
         StringBuilder sb = new StringBuilder();
         for(var i = 0; i < numberOfBoxes; i++){
@@ -130,13 +136,6 @@ public class GameState {
             playerState.setIsPlayerOnesTurn(true);
         }
         playerState.setAvailableTurns(2);
-    }
-
-
-    public static void main(String[] args){
-        var model = new GameState();
-        System.out.println(model);
-
     }
 
 }
