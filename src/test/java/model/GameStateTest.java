@@ -23,7 +23,9 @@ class GameStateTest {
         }
         model.move(nonHiddenBox,model,playerState);
         assertEquals(model.getSquare(nonHiddenBox),new ReadOnlyObjectWrapper<>(model.getSquare(nonHiddenBox)).getValue());
-        playerState.setAvailableTurns(1);
+        model.move(nonHiddenBox + 1,model,playerState);
+        assertEquals(model.getSquare(nonHiddenBox + 1),new ReadOnlyObjectWrapper<>(model.getSquare(nonHiddenBox + 1)).getValue());
+        assertFalse(playerState.getIsPlayerOnesTurn());
 
     }
 
