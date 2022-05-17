@@ -144,6 +144,7 @@ public class GamePlayController {
 
     @FXML
     void doneButtonPressed(ActionEvent event) {
+        Logger.info("Player has ended their turn");
         if (playerState.getAvailableTurns() == 1){
             model.changePlayer(playerState);
         }else{
@@ -167,6 +168,7 @@ public class GamePlayController {
      * Writes an object of GameData to Json file using the JsonHelper class.
      */
     private void writeToJsonFile(){
+        Logger.info("Writing data to the Json file");
         GameData gameData = new GameData(model.startDateAndTime,playerState.playerOneNameProperty().getValue(),playerState.playerTwoNameProperty().getValue(), resultState.getWinner(), resultState.getNumberOfMoves());
         JsonHelper.write(gameData);
     }

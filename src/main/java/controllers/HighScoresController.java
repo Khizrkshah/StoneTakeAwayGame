@@ -13,6 +13,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import main.Launcher;
 import model.HighScores;
+import org.tinylog.Logger;
 import util.GameData;
 import util.JsonHelper;
 
@@ -61,6 +62,7 @@ public class HighScoresController {
         List<GameData> gameDataList;
         ObservableList<HighScores> highScoresObservableList = FXCollections.observableArrayList();
 
+        Logger.info("Loading Json file");
         File file = JsonHelper.read();
 
         try{
@@ -79,6 +81,7 @@ public class HighScoresController {
                             highScoresObservableList.add(highScores);
                         });
             }
+            Logger.info("Populating High Scores table with the data from Json file");
             highScoresTable.setItems(highScoresObservableList);
 
         }catch (Exception e){

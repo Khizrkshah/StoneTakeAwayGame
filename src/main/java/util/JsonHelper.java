@@ -5,7 +5,9 @@ import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import main.Launcher;
 import main.Main;
+import org.tinylog.Logger;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -32,6 +34,7 @@ public class JsonHelper {
                 });
             }
             gameDataList.add(gameData);
+            Logger.debug("Writing game data list to Json file {}",gameDataList);
             writer.writeValue(file, gameDataList);
         } catch (Exception e) {
             e.printStackTrace();
