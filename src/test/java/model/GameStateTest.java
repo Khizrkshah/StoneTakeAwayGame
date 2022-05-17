@@ -7,13 +7,13 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class GameStateTest {
 
-    GameState model = new GameState();
-    PlayerState playerState = new PlayerState();
+
 
 
     @Test
     void move() {
         GameState model = new GameState();
+        PlayerState playerState = new PlayerState();
         int nonHiddenBox = 0;
         for(int i = 0; i < model.numberOfBoxes; i++){
             if (model.getSquare(i).toString() == " 0 "){
@@ -31,6 +31,7 @@ class GameStateTest {
 
     @Test
     void isGoalState() {
+        GameState model = new GameState();
         assertFalse(model.isGoalState(model));
         for (int i = 0; i < model.numberOfBoxes; i++) {
             model.setSquareToHidden(i);
@@ -40,6 +41,8 @@ class GameStateTest {
 
     @Test
     void changePlayer() {
+        GameState model = new GameState();
+        PlayerState playerState = new PlayerState();
         model.changePlayer(playerState);
         assertFalse(playerState.getIsPlayerOnesTurn());
         model.changePlayer(playerState);
@@ -48,17 +51,20 @@ class GameStateTest {
 
     @Test
     void squareProperty(){
+        GameState model = new GameState();
         assertEquals(model.squareProperty(0).getValue(), new ReadOnlyObjectWrapper<>(model.getSquare(0)).getValue());
     }
 
     @Test
     void getSquare(){
+        GameState model = new GameState();
         assertEquals(model.getSquare(0), new ReadOnlyObjectWrapper<>(model.getSquare(0)).getValue());
         assertThrows(IndexOutOfBoundsException.class, () -> model.getSquare(model.numberOfBoxes));
     }
 
     @Test
     void setSquareToHidden(){
+        GameState model = new GameState();
         model.setSquareToHidden(0);
         assertEquals(model.getSquare(0),new ReadOnlyObjectWrapper<>(model.getSquare(0)).getValue());
     }
