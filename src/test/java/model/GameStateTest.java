@@ -23,27 +23,30 @@ class GameStateTest {
         }
         model.move(nonHiddenBox,model,playerState);
         assertEquals(model.getSquare(nonHiddenBox),new ReadOnlyObjectWrapper<>(model.getSquare(nonHiddenBox)).getValue());
+        playerState.setAvailableTurns(1);
 
     }
 
     @Test
     void isGoalState() {
+        assertFalse(model.isGoalState(model));
         for (int i = 0; i < model.numberOfBoxes; i++) {
             model.setSquareToHidden(i);
         }
         assertSame(true, model.isGoalState(model));
-        assertFalse(!model.isGoalState(model), String.valueOf(false));
     }
 
     @Test
     void changePlayer() {
         model.changePlayer(playerState);
         assertFalse(playerState.getIsPlayerOnesTurn());
+        model.changePlayer(playerState);
+        assertTrue(playerState.getIsPlayerOnesTurn());
     }
 
     @Test
     void squareProperty(){
-        assertEquals(model.getSquare(0), new ReadOnlyObjectWrapper<>(model.getSquare(0)).getValue());
+        assertEquals(model.squareProperty(0).getValue(), new ReadOnlyObjectWrapper<>(model.getSquare(0)).getValue());
     }
 
     @Test

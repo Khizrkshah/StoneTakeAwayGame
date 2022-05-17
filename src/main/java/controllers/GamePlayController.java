@@ -25,6 +25,9 @@ import util.JsonHelper;
 import java.io.IOException;
 import java.net.URISyntaxException;
 
+/**
+ * The Controller class for the Gameplay.fxml file.
+ */
 public class GamePlayController {
 
     @FXML
@@ -161,7 +164,7 @@ public class GamePlayController {
     }
 
     /**
-     * Writes an object of GameData to Json file using the JsonHelper class
+     * Writes an object of GameData to Json file using the JsonHelper class.
      */
     private void writeToJsonFile(){
         GameData gameData = new GameData(model.startDateAndTime,playerState.playerOneNameProperty().getValue(),playerState.playerTwoNameProperty().getValue(), resultState.getWinner(), resultState.getNumberOfMoves());
