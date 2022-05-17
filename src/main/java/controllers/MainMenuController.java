@@ -20,6 +20,9 @@ import org.tinylog.Logger;
 import java.io.IOException;
 import java.util.function.LongUnaryOperator;
 
+/**
+ * The Controller class for MainMenu.fxml file.
+ */
 public class MainMenuController {
 
     @FXML

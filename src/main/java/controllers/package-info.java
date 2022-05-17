@@ -1,4 +1,4 @@
 /**
- * Provides Controller classes for the project
+ * Provides Controller classes for the project.
  */
 package controllers;

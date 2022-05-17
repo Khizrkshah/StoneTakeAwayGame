@@ -8,11 +8,26 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * Class that is Used to Launch the application by showing the firstStage/mainMenuStage.
+ */
 public class Launcher extends Application {
 
+    /**
+     * The Stage that contains the loaded MainMenu.fxml file as a scene.
+     */
     public static Stage mainMenuStage = new Stage();
+    /**
+     * The Stage that contains the loaded GamePlay.fxml file as a scene.
+     */
     public static Stage gamePlayStage = new Stage();
+    /**
+     * The Stage that contains the loaded Highscores.fxml file as a scene.
+     */
     public static Stage highScoresStage = new Stage();
+    /**
+     * The Stage that contains the loaded Rules.fxml file as a scene.
+     */
     public static Stage rulesStage = new Stage();
 
     @Override

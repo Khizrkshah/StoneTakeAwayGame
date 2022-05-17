@@ -17,13 +17,25 @@ public class PlayerState {
    private int secondBoxSelection;
    private boolean playerDone;
 
+    /**
+     * Constructor for PlayerStateClass.
+     */
     public PlayerState(){
         isPlayerOnesTurn = true;
         playerDone = false;
         availableTurns = 2;
     }
 
+    /**
+     * Returns the StringProperty of playerOneName.
+     * @return the StringProperty of playerOneName
+     */
     public StringProperty playerOneNameProperty(){ return playerOneName; }
+
+    /**
+     * Returns the StringProperty of playerTwoName.
+     * @return the StringProperty of playerTwoName
+     */
     public StringProperty playerTwoNameProperty(){ return playerTwoName; }
 
 }

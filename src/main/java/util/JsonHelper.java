@@ -11,6 +11,9 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The Helper Class used for writing to and reading from the data.json file.
+ */
 public class JsonHelper {
 
     /**

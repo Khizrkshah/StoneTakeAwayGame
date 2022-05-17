@@ -15,12 +15,21 @@ import java.time.LocalDateTime;
  */
 public class GameState {
 
+    /**
+     * The starting Date and Time when the game has started.
+     */
     public LocalDateTime startDateAndTime;
+    /**
+     * The number of boxes that should be created.
+     */
     public static int numberOfBoxes = 15;
 
     private ReadOnlyObjectWrapper<Square>[] boxes = new ReadOnlyObjectWrapper[numberOfBoxes];
 
 
+    /**
+     * The Constructor of the GameState Class.
+     */
     public GameState(){
         Random random = new Random();
         int emptyBoxIndex = random.nextInt(14);
@@ -54,7 +63,7 @@ public class GameState {
     }
 
     /**
-     * Sets the Square to hidden on the index specified
+     * Sets the Square to hidden on the index specified.
      * @param i the value of the index
      */
     public void setSquareToHidden(int i){
@@ -100,7 +109,7 @@ public class GameState {
     }
 
     /**
-     * Returns a String of ordinals of boxes
+     * Returns a String of ordinals of boxes.
      * @return String of ordinals of boxes
      */
     public String toString(){

@@ -21,6 +21,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+/**
+ * The Controller class for HighScores.fxml file.
+ */
 public class HighScoresController {
 
     @FXML
@@ -47,7 +50,7 @@ public class HighScoresController {
     }
 
     /**
-     * Used to fill the TableView with HighScores information
+     * Used to fill the TableView with HighScores information.
      */
     public void fillHighScoresTable(){
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));

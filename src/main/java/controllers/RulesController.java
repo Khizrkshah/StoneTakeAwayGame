@@ -7,7 +7,9 @@ import javafx.scene.control.Button;
 import javafx.scene.text.Text;
 import main.Launcher;
 
-
+/**
+ * The Controller class for Rules.fxml file.
+ */
 public class RulesController {
 
     @FXML
