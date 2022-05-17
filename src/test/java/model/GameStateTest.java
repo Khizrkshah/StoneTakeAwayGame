@@ -3,6 +3,8 @@ package model;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class GameStateTest {
@@ -14,17 +16,18 @@ class GameStateTest {
     void move() {
         GameState model = new GameState();
         PlayerState playerState = new PlayerState();
-        int nonHiddenBox = 0;
+        ArrayList<Integer> nonHiddenBox = new ArrayList<>(2);
         for(int i = 0; i < model.numberOfBoxes; i++){
-            if (model.getSquare(i).toString() == " 0 "){
-             nonHiddenBox = i;
+            if (model.getSquare(i).ordinal() == 0 && model.getSquare(i + 1).ordinal() == 0){
+             nonHiddenBox.add(i);
+             nonHiddenBox.add(i + 1);
              break;
             }
         }
-        model.move(nonHiddenBox,model,playerState);
-        assertEquals(model.getSquare(nonHiddenBox),new ReadOnlyObjectWrapper<>(model.getSquare(nonHiddenBox)).getValue());
-        model.move(nonHiddenBox + 1,model,playerState);
-        assertEquals(model.getSquare(nonHiddenBox + 1),new ReadOnlyObjectWrapper<>(model.getSquare(nonHiddenBox + 1)).getValue());
+        model.move(nonHiddenBox.get(0),model,playerState);
+        assertEquals(model.getSquare(nonHiddenBox.get(0)),new ReadOnlyObjectWrapper<>(model.getSquare(nonHiddenBox.get(0))).getValue());
+        model.move(nonHiddenBox.get(1),model,playerState);
+        assertEquals(model.getSquare(nonHiddenBox.get(1)),new ReadOnlyObjectWrapper<>(model.getSquare(nonHiddenBox.get(1))).getValue());
         assertFalse(playerState.getIsPlayerOnesTurn());
 
     }

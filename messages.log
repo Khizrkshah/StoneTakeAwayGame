@@ -1,2 +1,2 @@
-2022-05-17 07:05:46 [JavaFX Application Thread] controllers.GamePlayController.handleMouseClick()
-INFO: Reached Goal State!
+2022-05-17 18:27:03 [main] model.GameState.move()
+ERROR: Box is already empty
