@@ -1,12 +1,7 @@
 package model;
 
-import controllers.GamePlayController;
 import javafx.beans.property.ReadOnlyObjectWrapper;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import java.time.LocalDateTime;
-import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.*;
 
