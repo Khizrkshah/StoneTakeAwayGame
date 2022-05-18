@@ -22,7 +22,7 @@ public class JsonHelper {
      * @param gameData object of class GameData containing information to be written into data.json file
      */
     public static void write(GameData gameData) {
-        File file = new File(System.getProperty("user.dir") + System.getProperty("file.separator") + "data.json");
+        File file = new File("data.json");
         ObjectMapper mapper = new ObjectMapper().registerModule(new JavaTimeModule());
         ObjectWriter writer = mapper.writer(new DefaultPrettyPrinter());
 
@@ -49,7 +49,7 @@ public class JsonHelper {
      * @return the data.json File
      */
     public static File read() {
-        return new File(System.getProperty("user.dir") + System.getProperty("file.separator") + "data.json");
+        return new File("data.json");
     }
 
 }
