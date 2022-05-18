@@ -1,4 +1,18 @@
-2022-05-17 20:44:40 [JavaFX Application Thread] controllers.HighScoresController.fillHighScoresTable()
+2022-05-18 11:33:41 [JavaFX Application Thread] controllers.GamePlayController.doneButtonPressed()
+INFO: Player has ended their turn
+2022-05-18 11:33:45 [JavaFX Application Thread] controllers.GamePlayController.handleMouseClick()
+INFO: Reached Goal State!
+2022-05-18 11:33:45 [JavaFX Application Thread] controllers.GamePlayController.writeToJsonFile()
+INFO: Writing data to the Json file
+2022-05-18 11:33:45 [JavaFX Application Thread] util.JsonHelper.write()
+DEBUG: Writing game data list to Json file [GameData(startDateAndTime=2022-05-18T11:33:30.439898800, playerOneName=Khizr, playerTwoName=Ahmed, winner=Ahmed, numberOfMoves=14)]
+2022-05-18 11:33:45 [JavaFX Application Thread] util.JsonHelper.write()
+DEBUG: file:/E:/Java-projects/homework-project-Khizrkshah/data.json
+2022-05-18 11:33:45 [JavaFX Application Thread] util.JsonHelper.write()
+DEBUG: E:\Java-projects\homework-project-Khizrkshah\data.json
+2022-05-18 11:33:45 [JavaFX Application Thread] util.JsonHelper.write()
+DEBUG: E:\Java-projects\homework-project-Khizrkshah\data.json
+2022-05-18 11:33:52 [JavaFX Application Thread] controllers.HighScoresController.fillHighScoresTable()
 INFO: Loading Json file
-2022-05-17 20:44:40 [JavaFX Application Thread] controllers.HighScoresController.fillHighScoresTable()
+2022-05-18 11:33:52 [JavaFX Application Thread] controllers.HighScoresController.fillHighScoresTable()
 INFO: Populating High Scores table with the data from Json file
