@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.tinylog.Logger;
 
 import java.io.IOException;
 
@@ -34,6 +35,7 @@ public class Launcher extends Application {
     public void start(Stage firstStage) throws IOException {
 
         mainMenuStage = firstStage;
+        Logger.info("Application starts.");
 
         Parent mainMenuRoot = FXMLLoader.load(Launcher.class.getClassLoader().getResource("MainMenu.fxml"));
         Scene mainMenuScene = new Scene(mainMenuRoot);

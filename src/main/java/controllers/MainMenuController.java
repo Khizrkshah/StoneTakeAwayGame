@@ -75,6 +75,7 @@ public class MainMenuController {
             a.show();
             Logger.error("Player one name not entered");
         }else{
+            Logger.info("Both player names entered successfully");
             GamePlayController gamePlayController = new GamePlayController();
             FXMLLoader gamePlayLoader = new FXMLLoader();
             gamePlayLoader.setLocation(getClass().getClassLoader().getResource("GamePlay.fxml"));

@@ -6,6 +6,7 @@ import javafx.beans.property.ReadOnlyObjectWrapper;
 import main.Launcher;
 import org.tinylog.Logger;
 
+import java.time.format.DateTimeFormatter;
 import java.util.Random;
 import java.time.LocalDateTime;
 
@@ -42,6 +43,8 @@ public class GameState {
 
         }
         startDateAndTime = LocalDateTime.now();
+        DateTimeFormatter format = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+        String formatDateTime = startDateAndTime.format(format);
     }
 
     /**

@@ -100,6 +100,7 @@ public class GamePlayController {
     private void handleMouseClick(MouseEvent event) {
         var square = (StackPane) event.getSource();
         var col = GridPane.getColumnIndex(square);
+        Logger.info("Box {} clicked", col + 1);
         model.move(col, model, playerState);
         resultState.setNumberOfMoves(resultState.getNumberOfMoves() + 1);
         System.out.println(model);
