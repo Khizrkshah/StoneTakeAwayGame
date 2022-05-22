@@ -24,6 +24,7 @@ import util.JsonHelper;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.time.format.DateTimeFormatter;
 
 /**
  * The Controller class for the Gameplay.fxml file.
@@ -169,7 +170,7 @@ public class GamePlayController {
      */
     private void writeToJsonFile(){
         Logger.info("Writing data to the Json file");
-        GameData gameData = new GameData(model.startDateAndTime,playerState.playerOneNameProperty().getValue(),playerState.playerTwoNameProperty().getValue(), resultState.getWinner(), resultState.getNumberOfMoves());
+        GameData gameData = new GameData(model.startDateAndTime.format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss")),playerState.playerOneNameProperty().getValue(),playerState.playerTwoNameProperty().getValue(), resultState.getWinner(), resultState.getNumberOfMoves());
         JsonHelper.write(gameData);
     }
 

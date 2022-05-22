@@ -43,8 +43,6 @@ public class GameState {
 
         }
         startDateAndTime = LocalDateTime.now();
-        DateTimeFormatter format = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
-        String formatDateTime = startDateAndTime.format(format);
     }
 
     /**

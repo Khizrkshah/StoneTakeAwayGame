@@ -1,6 +1,6 @@
-2022-05-18 23:52:58 [JavaFX Application Thread] controllers.MainMenuController.startGamePressed()
-ERROR: Player names not entered
-2022-05-18 23:53:03 [JavaFX Application Thread] controllers.HighScoresController.fillHighScoresTable()
+2022-05-22 10:59:33 [JavaFX Application Thread] main.Launcher.start()
+INFO: Application starts.
+2022-05-22 10:59:36 [JavaFX Application Thread] controllers.HighScoresController.fillHighScoresTable()
 INFO: Loading Json file
-2022-05-18 23:53:03 [JavaFX Application Thread] controllers.HighScoresController.fillHighScoresTable()
+2022-05-22 10:59:36 [JavaFX Application Thread] controllers.HighScoresController.fillHighScoresTable()
 INFO: Populating High Scores table with the data from Json file

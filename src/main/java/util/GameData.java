@@ -12,7 +12,7 @@ public class GameData {
     /**
      * The starting Date and Time of the game.
      */
-    public LocalDateTime startDateAndTime;
+    public String startDateAndTime;
     /**
      * The name of the first player.
      */
@@ -45,7 +45,7 @@ public class GameData {
      * @param winner the name of the winner
      * @param numberOfMoves the total number of moves to end the game
      */
-    public GameData(LocalDateTime startDateAndTime, String playerOneName, String playerTwoName, String winner, int numberOfMoves){
+    public GameData(String startDateAndTime, String playerOneName, String playerTwoName, String winner, int numberOfMoves){
         this.startDateAndTime = startDateAndTime;
         this.playerOneName = playerOneName;
         this.playerTwoName = playerTwoName;
