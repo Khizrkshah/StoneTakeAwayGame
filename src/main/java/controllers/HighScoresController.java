@@ -59,16 +59,13 @@ public class HighScoresController {
 
         ObjectMapper mapper = new ObjectMapper().registerModule(new JavaTimeModule());
 
-        List<GameData> gameDataList;
+        List<GameData> gameDataList = JsonHelper.read();
         ObservableList<HighScores> highScoresObservableList = FXCollections.observableArrayList();
 
         Logger.info("Loading Json file");
-        File file = JsonHelper.read();
+
 
         try{
-            if(file.length() != 0){
-                gameDataList = mapper.readValue(file, new TypeReference<List<GameData>>() {
-                });
                 Map<String,Long> map = gameDataList.stream()
                         .collect(Collectors.groupingBy(GameData::getWinner,Collectors.counting()));
                 map.entrySet().stream()
@@ -80,7 +77,6 @@ public class HighScoresController {
                             highScores.setNumberOfWins(entry.getValue().longValue());
                             highScoresObservableList.add(highScores);
                         });
-            }
             Logger.info("Populating High Scores table with the data from Json file");
             highScoresTable.setItems(highScoresObservableList);
 

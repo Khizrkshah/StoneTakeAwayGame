@@ -1,6 +1,6 @@
-2022-05-22 10:59:33 [JavaFX Application Thread] main.Launcher.start()
+2022-05-25 15:20:59 [JavaFX Application Thread] main.Launcher.start()
 INFO: Application starts.
-2022-05-22 10:59:36 [JavaFX Application Thread] controllers.HighScoresController.fillHighScoresTable()
+2022-05-25 15:21:02 [JavaFX Application Thread] controllers.HighScoresController.fillHighScoresTable()
 INFO: Loading Json file
-2022-05-22 10:59:36 [JavaFX Application Thread] controllers.HighScoresController.fillHighScoresTable()
+2022-05-25 15:21:02 [JavaFX Application Thread] controllers.HighScoresController.fillHighScoresTable()
 INFO: Populating High Scores table with the data from Json file
